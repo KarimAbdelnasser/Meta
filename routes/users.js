@@ -34,7 +34,7 @@ router.post("/signUp", async (req, res) => {
     });
     const token = user.generateAuthToken();
     res.status(201).json({
-        message: `You have signed up successfully\n Your ID is = ${user._id}\n You can sign in from here --> https://meta-media.herokuapp.com/users/user/${user._id}`,
+        message: `You have signed up successfully\n Your ID is = ${user._id}\n You can sign in from here --> https://somedia--app.herokuapp.com//users/user/${user._id}`,
         token: token,
     });
 });
@@ -159,7 +159,7 @@ router.post(
             user.profilePic = req.file.buffer;
             await user.save();
             res.status(201).send(
-                "The user's profilePic has updated successfully"
+                "The user's profilePic has been updated successfully"
             );
         }
     }
@@ -175,7 +175,7 @@ router.get("/getProfPic", auth, async (req, res) => {
     }
 
     res.json(
-        `Your profile picture is here --> 'https://meta-media.herokuapp.com/users/${user._id}/profilePic'`
+        `Your profile picture is here --> 'https://somedia--app.herokuapp.com/users/${user._id}/profilePic'`
     );
 });
 
